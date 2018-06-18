@@ -1,0 +1,77 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  font-size: 16px;
+}
+header {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  padding: 1rem $gutter;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: $normalWeight;
+
+  }
+  h2 {
+    font-size: 1.0rem;
+    font-weight: $normalWeight;
+  }
+}
+
+nav {
+  background-color: $secondaryColor;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+
+  ul li {
+    float: left;
+    width: 25%;
+    border-right: 1px solid rgba(0, 0, 0, .3);
+  }
+  ul li:last-child {
+    border-right: none;
+  }
+  ul li a {
+    display: block;
+    text-align: center;
+    font-weight: $boldWeight;
+    padding: .5rem 0;
+    color: $primaryColor;
+    text-decoration: none;
+    transition: background .5s ease, color .5s ease;
+  }
+
+  ul li.active a {
+    background-color: darken($secondaryColor, 10%);
+  }
+
+  ul li a:hover {
+    color: $secondaryColor;
+    background-color: $primaryColor;
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $primaryColor;
+  p {
+    text-align: center;
+    color: $secondaryColor;
+    padding:  .75rem 0;
+    font-size: .9rem;
+  }
+  p a {
+    color: $secondaryColor;
+  }
+}
+.clearfix:After {
+  content: "";
+  display: table;
+  clear: both;
+}
